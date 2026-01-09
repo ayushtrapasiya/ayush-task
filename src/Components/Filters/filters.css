@@ -98,3 +98,10 @@
     transform: translateY(0);
   }
 }
+
+
+@media(max-width :400px){
+  .tag-menu{
+    left: -150px !important;
+  }
+}
