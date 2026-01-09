@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
         <p className="brand">{product.brand}</p>
 
         <h3 className="title">{product.title}</h3>
-        <p>{product.description}</p>
+        <p className="des">{product.description}</p>
         <div className="rating">
           ⭐ <span>{product.rating}</span>
         </div>

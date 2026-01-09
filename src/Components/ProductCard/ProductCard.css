@@ -60,6 +60,15 @@
   /* height: 42px; */
   overflow: hidden;
 }
+.des{
+   font-size: 12.5px;
+  color: #6b7280;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;    
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .rating {
   font-size: 13px;
