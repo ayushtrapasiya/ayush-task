@@ -1,9 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import Login from "../Pages/Login/Login";
 import App from "../App";
 import ProtectedRoutes from "./ProtectedRoutes";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   { path: "/login", element: <Login /> },
 
   {
