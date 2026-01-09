@@ -14,9 +14,7 @@ export const useProductStore = create((set, get) => ({
     const res = await fetch("https://dummyjson.com/products");
     const data = await res.json();
 
-    const allTags = [
-      ...new Set(data.products.flatMap((p) => p.tags || [])),
-    ];
+    const allTags = [...new Set(data.products.flatMap((p) => p.tags || []))];
 
     set({
       products: data.products,
@@ -34,7 +32,18 @@ export const useProductStore = create((set, get) => ({
       };
     });
   },
-
+  clearAll: () => {
+    const { products } = get();
+    console.log("clicked");
+    set({
+      filters: {
+        price: "",
+        rating: "",
+        tags: [],
+      },
+      filteredProducts: products,
+    });
+  },
   toggleTag: (tag) => {
     set((state) => {
       const updatedTags = state.filters.tags.includes(tag)

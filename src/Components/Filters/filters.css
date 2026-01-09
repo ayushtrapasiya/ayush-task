@@ -104,4 +104,11 @@
   .tag-menu{
     left: -150px !important;
   }
+  .clear-btn{
+    width: auto;
+  }
+}
+
+.clear-btn{
+  width: 200px;
 }

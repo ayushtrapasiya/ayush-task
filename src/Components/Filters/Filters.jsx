@@ -3,19 +3,19 @@ import "./filters.css";
 import { useProductStore } from "../../store";
 
 export default function Filters() {
-  const { tags, filters, setFilter, toggleTag } = useProductStore();
+  const { tags, filters, setFilter, toggleTag , clearAll} = useProductStore();
   const [open, setOpen] = useState(false);
 
   return (
     <div className="filters ">
-      <select onChange={(e) => setFilter("price", e.target.value)}>
+      <select onChange={(e) => setFilter("price", e.target.value)} value={filters.price}>
         <option value="">Price</option>
         <option value="low">Below $20</option>
         <option value="mid">$20 - $50</option>
         <option value="high">Above $50</option>
       </select>
 
-      <select onChange={(e) => setFilter("rating", e.target.value)}>
+      <select onChange={(e) => setFilter("rating", e.target.value)} value={filters.rating}>
         <option value="">Rating</option>
         <option value="4">4★ & above</option>
         <option value="3">3★ & above</option>
@@ -54,6 +54,14 @@ export default function Filters() {
           </div>
         )}
       </div>
+       <button
+          type="button"
+          className="clear-btn"
+          onClick={() => clearAll()}
+        >
+          Clear All
+     
+        </button>
     </div>
   );
 }
